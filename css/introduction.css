@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap');
+
+* {
+    background-color: rgb(114, 19, 20);
+    box-sizing: border-box;
+    color: rgb(243, 179, 3);
+}
+
+:root {
+    --font-click: "Great Vibes", cursive;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro h1 {
+    font-size: 12rem;
+    text-align: center;
+    font-family: var(--font-click);
+}
+
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.intro img {
+    max-width: 100%;
+    height: auto;
+    animation: beat 1.5s ease-in-out infinite;
+}
+

@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap');
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+ 
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        :root {
+            --font-click: "Great Vibes", cursive;
+        }
+ 
+        html {
+            scroll-behavior: smooth;
+        }
+ 
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background-color: rgb(114, 19, 20);
+            width: 100%;
+            height: 100vh;
+        }
+ 
+        body.no-scroll {
+            overflow: hidden;
+            height: 100vh;
+        }
+ 
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(114, 19, 20);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: visible;
+            flex-shrink: 0;
+            padding: clamp(40px, 8vw, 80px) 20px;
+        }
+ 
+        .message {
+            color: rgb(255, 253, 247);
+            font-family: var(--font-click);
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 1000px;
+            padding: clamp(20px, 4vw, 50px);
+            text-align: center;
+            min-height: auto;
+        }
+ 
+        .message h1 {
+            margin: 0 0 clamp(20px, 4vw, 40px) 0;
+            font-weight: 500;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.3;
+            word-wrap: break-word;
+        }
+ 
+        .message p {
+            line-height: 1.8;
+            white-space: pre-wrap;
+            margin: 0;
+            font-size: clamp(1.2rem, 4vw, 2.5rem);
+            letter-spacing: 0.05em;
+            word-wrap: break-word;
+            text-align: left;
+            max-width: 100%;
+        }
+ 
+        .cursor {
+            display: inline-block;
+            height: 1.2em;
+            width: 2px;
+            background-color: rgb(255, 253, 247);
+            margin-left: 4px;
+            vertical-align: middle;
+            animation: blink 0.7s step-end infinite;
+        }
+ 
+        @keyframes blink {
+            50% { background-color: transparent; }
+        }
+ 
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+ 
+        .hearts span {
+            position: absolute;
+            top: -50px;
+            color: rgb(193, 81, 99);
+            animation: fall linear infinite;
+        }
+ 
+        .hearts span:nth-child(1) { font-size: clamp(80px, 20vw, 190px); left: 10%; animation-duration: 5s; }
+        .hearts span:nth-child(2) { font-size: clamp(20px, 5vw, 35px); left: 25%; animation-duration: 8s; }
+        .hearts span:nth-child(3) { font-size: clamp(60px, 15vw, 120px); left: 40%; animation-duration: 6s; }
+        .hearts span:nth-child(4) { font-size: clamp(40px, 10vw, 80px); left: 60%; animation-duration: 7s; }
+        .hearts span:nth-child(5) { font-size: clamp(30px, 7vw, 50px); left: 65%; animation-duration: 5s; }
+        .hearts span:nth-child(6) { font-size: clamp(25px, 6vw, 45px); left: 75%; animation-duration: 7s; }
+        .hearts span:nth-child(7) { font-size: clamp(35px, 8vw, 55px); left: 85%; animation-duration: 6s; }
+        .hearts span:nth-child(8) { font-size: clamp(70px, 18vw, 130px); left: 95%; animation-duration: 8s; }
+        .hearts span:nth-child(9) { font-size: clamp(60px, 15vw, 120px); left: 15%; animation-duration: 9s; }
+ 
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            50% {
+                transform: translate(50px, 50vh) rotate(180deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+ 
+        @media (max-width: 768px) {
+            .container {
+                padding: clamp(30px, 6vw, 60px) 15px;
+                min-height: 100vh;
+            }
+ 
+            .message {
+                padding: clamp(15px, 3vw, 35px);
+            }
+ 
+            .message h1 {
+                font-size: clamp(2rem, 7vw, 3.5rem);
+                margin: 0 0 clamp(15px, 3vw, 25px) 0;
+            }
+ 
+            .message p {
+                font-size: clamp(1rem, 3vw, 1.8rem);
+            }
+        }
+ 
+        @media (max-width: 480px) {
+            .container {
+                padding: clamp(30px, 6vw, 50px) 15px;
+                min-height: 100vh;
+            }
+ 
+            .message {
+                padding: clamp(15px, 3vw, 30px);
+                width: 95%;
+            }
+ 
+            .message h1 {
+                margin: 0 0 clamp(15px, 3vw, 20px) 0;
+                font-size: clamp(1.8rem, 6vw, 2.8rem);
+                line-height: 1.2;
+            }
+ 
+            .message p {
+                font-size: clamp(1rem, 3.5vw, 1.8rem);
+            }
+        }
